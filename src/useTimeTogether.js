@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
-const START_DATE = new Date('2024-12-20T00:00:00')
+// Medianoche del 20 dic 2024 en Colombia (UTC-5) = 05:00 UTC
+const START_DATE = new Date('2024-12-20T05:00:00Z')
 
 function calcTime() {
   const now = new Date()
@@ -12,8 +13,9 @@ function calcTime() {
   const totalDays = Math.floor(totalHours / 24)
 
   const years = Math.floor(totalDays / 365)
-  const months = Math.floor((totalDays % 365) / 30)
-  const days = totalDays % 30
+  const remainingDays = totalDays % 365
+  const months = Math.floor(remainingDays / 30)
+  const days = remainingDays % 30
   const hours = totalHours % 24
   const minutes = totalMinutes % 60
   const seconds = totalSeconds % 60
