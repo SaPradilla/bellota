@@ -13,8 +13,9 @@ function calcTime() {
   const totalDays = Math.floor(totalHours / 24)
 
   const years = Math.floor(totalDays / 365)
-  const months = Math.floor((totalDays % 365) / 30)
-  const days = totalDays % 30
+  const remainingDays = totalDays % 365
+  const months = Math.floor(remainingDays / 30)
+  const days = remainingDays % 30
   const hours = totalHours % 24
   const minutes = totalMinutes % 60
   const seconds = totalSeconds % 60
