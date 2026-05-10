@@ -1,0 +1,29 @@
+.container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -2rem;
+  color: #e8a0b4;
+  animation: floatUp linear infinite;
+  user-select: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: inherit;
+  }
+  50% {
+    transform: translateY(-45vh) rotate(20deg) scale(1.15);
+  }
+  100% {
+    transform: translateY(-105vh) rotate(-10deg) scale(0.8);
+    opacity: 0;
+  }
+}

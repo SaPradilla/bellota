@@ -1,0 +1,202 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: radial-gradient(ellipse at top, #3d0d1f 0%, #1a0a0f 60%);
+  position: relative;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  width: 100%;
+  text-align: center;
+  padding: 3rem 2.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(232, 160, 180, 0.2);
+  border-radius: 2rem;
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 60px rgba(200, 80, 120, 0.12),
+    0 0 120px rgba(200, 80, 120, 0.06);
+  animation: fadeIn 1.2s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.since {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c48a9a;
+  margin-bottom: 1.2rem;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  color: #f5e6ec;
+  line-height: 1.1;
+  margin-bottom: 2.5rem;
+}
+
+.amp {
+  color: #e8a0b4;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* --- Big day counter --- */
+.daysHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.daysNumber {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(4.5rem, 18vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(135deg, #f5e6ec 0%, #e8a0b4 50%, #c25a80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { filter: brightness(1); }
+  50%       { filter: brightness(1.12); }
+}
+
+.daysWord {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #c48a9a;
+  margin-top: 0.25rem;
+}
+
+/* --- Stats row (years · months · days) --- */
+.statsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #c48a9a;
+  opacity: 0.5;
+}
+
+/* --- Clock --- */
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.colon {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #c48a9a;
+  margin-bottom: 1rem;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* --- Shared stat block --- */
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 3.5rem;
+}
+
+.statValue {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #f5e6ec;
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c48a9a;
+  margin-top: 0.25rem;
+}
+
+/* --- Divider --- */
+.divider {
+  font-size: 1.1rem;
+  color: #e8a0b4;
+  margin-bottom: 2rem;
+  opacity: 0.7;
+}
+
+/* --- Quote --- */
+.quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: #d4a0b5;
+  line-height: 1.7;
+  max-width: 420px;
+  margin: 0 auto 2rem;
+  border: none;
+}
+
+/* --- Footer --- */
+.footer {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: #a06070;
+  margin-top: 0.5rem;
+}
+
+.footer em {
+  font-style: normal;
+  color: #e8a0b4;
+}
+
+/* --- Mobile tweaks --- */
+@media (max-width: 480px) {
+  .card {
+    padding: 2.5rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .statsRow {
+    gap: 0.6rem;
+  }
+}
